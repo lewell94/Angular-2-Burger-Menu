@@ -1,0 +1,1 @@
+Angular 2 Burger Menu - the food kind, not the mobile kind. Angular 1 version at http://codepen.io/lewell94/pen/BLxdxQ

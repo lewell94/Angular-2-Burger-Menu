@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var subtitle_component_1 = require('./components/subtitle.component');
 var list_component_1 = require('./components/list.component');
+var button_component_1 = require('./components/button.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,11 +21,13 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule],
             declarations: [
                 subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
+                list_component_1.ListComponent,
+                button_component_1.ButtonComponent
             ],
             bootstrap: [
                 subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
+                list_component_1.ListComponent,
+                button_component_1.ButtonComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

@@ -9,17 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var StagesService = (function () {
+    function StagesService() {
+        this.currentStage = 'size';
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'burger-menu',
-            template: '<h1>Hello World!</h1><menu-title</menu-title>'
-        }), 
+    StagesService.prototype.updateStage = function () {
+        var CURRENT = this.currentStage;
+        var update = '';
+        switch (CURRENT) {
+            case 'size':
+                update = 'patty';
+                break;
+            case 'patty':
+                update = 'salad';
+                break;
+            case 'salad':
+                update = 'sauce';
+                break;
+            case 'sauce':
+                update = 'finish';
+                break;
+        }
+        this.currentStage = update;
+    };
+    StagesService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], StagesService);
+    return StagesService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.StagesService = StagesService;
+//# sourceMappingURL=stages.service.js.map

@@ -19,9 +19,5 @@ export class MenuComponent {
 	nextStage(): void {
 
 		this.StagesService.updateStage();
-
-		if ( this.StagesService.currentStage === 'sauce' ) {
-			this.text = this.textOptions.final;
-		}
 	}
 }

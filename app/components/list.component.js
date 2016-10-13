@@ -9,27 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var subtitle_component_1 = require('./components/subtitle.component');
-var list_component_1 = require('./components/list.component');
-var AppModule = (function () {
-    function AppModule() {
+var ListComponent = (function () {
+    function ListComponent() {
+        this.lists = {
+            size: ['Quarter Pound', 'Half Pound', 'Full Pound'],
+            patty: ['Beef', 'Chicken', 'Vegetable'],
+            salad: ['Lettuce', 'Tomato', 'Gherkin'],
+            sauce: ['Mayonnaise', 'Ketchup', 'BBQ Sauce']
+        };
+        this.items = this.lists.size;
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [
-                subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
-            ],
-            bootstrap: [
-                subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
-            ]
+    ListComponent = __decorate([
+        core_1.Component({
+            selector: 'menu-list',
+            template: "\n\t<ul class=\"menu__list\">\n\t\t<li *ngFor=\"let item of items\">\n\t\t\t{{item}}\n\t\t</li>\n\t</ul>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], ListComponent);
+    return ListComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.ListComponent = ListComponent;
+//# sourceMappingURL=list.component.js.map

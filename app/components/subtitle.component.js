@@ -9,27 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var subtitle_component_1 = require('./components/subtitle.component');
-var list_component_1 = require('./components/list.component');
-var AppModule = (function () {
-    function AppModule() {
+var SubtitleComponent = (function () {
+    function SubtitleComponent() {
+        this.titles = {
+            size: 'Select your burger size',
+            patty: 'Select your patty',
+            salad: 'Select your salad',
+            sauce: 'Select your sauce'
+        };
+        this.subtitle = this.titles.size;
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [
-                subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
-            ],
-            bootstrap: [
-                subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent
-            ]
+    SubtitleComponent = __decorate([
+        core_1.Component({
+            selector: 'menu-subtitle',
+            template: '<h3>{{subtitle}}</h3>'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], SubtitleComponent);
+    return SubtitleComponent;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.SubtitleComponent = SubtitleComponent;
+//# sourceMappingURL=subtitle.component.js.map

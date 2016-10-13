@@ -15,7 +15,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'burger-menu',
-            template: '<h1>Hello World!</h1>'
+            template: '<h1>Hello World!</h1><menu-title</menu-title>'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

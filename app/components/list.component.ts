@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { StagesService } from '../services/stages.service';
+
 @Component({
 	selector: 'menu-list',
 	template: `
@@ -8,7 +10,8 @@ import { Component } from '@angular/core';
 			{{item}}
 		</li>
 	</ul>
-    `
+    `,
+    providers: [ StagesService ]
 })
 export class ListComponent {
 

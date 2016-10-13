@@ -9,29 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var stages_service_1 = require('../services/stages.service');
 var ButtonComponent = (function () {
-    function ButtonComponent(StagesService) {
-        this.StagesService = StagesService;
+    function ButtonComponent() {
         this.textOptions = {
             default: 'Next Step',
             final: 'Finish'
         };
         this.text = this.textOptions.default;
     }
-    ButtonComponent.prototype.nextStage = function () {
-        this.StagesService.updateStage();
-        if (this.StagesService.currentStage === 'sauce') {
-            this.text = this.textOptions.final;
-        }
-    };
     ButtonComponent = __decorate([
         core_1.Component({
             selector: 'menu-button',
-            template: '<button class="menu__button" (click)="nextStage()">{{text}}</button>',
-            providers: [stages_service_1.StagesService]
+            template: '<button class="menu__button">{{text}}</button>'
         }), 
-        __metadata('design:paramtypes', [stages_service_1.StagesService])
+        __metadata('design:paramtypes', [])
     ], ButtonComponent);
     return ButtonComponent;
 }());

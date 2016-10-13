@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+var menu_component_1 = require('./components/menu.component');
 var subtitle_component_1 = require('./components/subtitle.component');
 var list_component_1 = require('./components/list.component');
 var button_component_1 = require('./components/button.component');
@@ -20,11 +21,13 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
             declarations: [
+                menu_component_1.MenuComponent,
                 subtitle_component_1.SubtitleComponent,
                 list_component_1.ListComponent,
                 button_component_1.ButtonComponent
             ],
             bootstrap: [
+                menu_component_1.MenuComponent,
                 subtitle_component_1.SubtitleComponent,
                 list_component_1.ListComponent,
                 button_component_1.ButtonComponent

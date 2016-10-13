@@ -10,25 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var stages_service_1 = require('../services/stages.service');
-var ListComponent = (function () {
-    function ListComponent() {
-        this.lists = {
-            size: ['Quarter Pound', 'Half Pound', 'Full Pound'],
-            patty: ['Beef', 'Chicken', 'Vegetable'],
-            salad: ['Lettuce', 'Tomato', 'Gherkin'],
-            sauce: ['Mayonnaise', 'Ketchup', 'BBQ Sauce']
-        };
-        this.items = this.lists.size;
+var MenuComponent = (function () {
+    function MenuComponent(StagesService) {
+        this.StagesService = StagesService;
     }
-    ListComponent = __decorate([
+    MenuComponent.prototype.nextStage = function () {
+        this.StagesService.updateStage();
+        if (this.StagesService.currentStage === 'sauce') {
+            this.text = this.textOptions.final;
+        }
+    };
+    MenuComponent = __decorate([
         core_1.Component({
-            selector: 'menu-list',
-            template: "\n\t<ul class=\"menu__list\">\n\t\t<li *ngFor=\"let item of items\">\n\t\t\t{{item}}\n\t\t</li>\n\t</ul>\n    ",
+            selector: 'burger-menu',
+            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle></menu-subtitle>\n\t<menu-list></menu-list>\n\t<menu-button></menu-button>\n\t",
             providers: [stages_service_1.StagesService]
         }), 
-        __metadata('design:paramtypes', [])
-    ], ListComponent);
-    return ListComponent;
+        __metadata('design:paramtypes', [stages_service_1.StagesService])
+    ], MenuComponent);
+    return MenuComponent;
 }());
-exports.ListComponent = ListComponent;
-//# sourceMappingURL=list.component.js.map
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

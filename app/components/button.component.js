@@ -26,7 +26,21 @@ var ButtonComponent = (function () {
         }
     };
     ButtonComponent.prototype.updateStage = function () {
-        this.stage = 'patty';
+        var CURRENT = this.stage;
+        switch (CURRENT) {
+            case 'size':
+                this.stage = 'patty';
+                break;
+            case 'patty':
+                this.stage = 'salad';
+                break;
+            case 'salad':
+                this.stage = 'sauce';
+                break;
+            case 'sauce':
+                this.stage = 'final';
+                break;
+        }
         this.nextStage.emit({
             value: this.stage
         });

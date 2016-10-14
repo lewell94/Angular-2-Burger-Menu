@@ -17,11 +17,18 @@ export class ButtonComponent {
 
 	@Input() stage: string;
 
+	@Input() choices;
+
 	@Output() nextStage: EventEmitter<any> = new EventEmitter();
 
 	updateStage(): void {
 
 		const CURRENT = this.stage;
+
+		if ( this.choices[CURRENT] === '' ) {
+			alert('Please select a choice');
+			return;
+		}
 
 		switch ( CURRENT ) {
 

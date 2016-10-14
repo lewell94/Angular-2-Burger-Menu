@@ -30,7 +30,7 @@ var MenuComponent = (function () {
     MenuComponent = __decorate([
         core_1.Component({
             selector: 'burger-menu',
-            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle [stage]=\"stage\"></menu-subtitle>\n\t<menu-list *ngIf=\"stage !== 'final'\" [stage]=\"stage\" (choiceSelected)=\"saveChoice($event)\"></menu-list>\n\t<menu-button *ngIf=\"stage !== 'final'\" [stage]=\"stage\" (nextStage)=\"updateStage($event)\"></menu-button>\n\t<burger *ngIf=\"stage === 'final'\" [choices]=\"choices\"></burger>\n\t",
+            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle [stage]=\"stage\"></menu-subtitle>\n\t<menu-list *ngIf=\"stage !== 'final'\" [stage]=\"stage\" (choiceSelected)=\"saveChoice($event)\"></menu-list>\n\t<menu-button *ngIf=\"stage !== 'final'\" [stage]=\"stage\" [choices]=\"choices\" (nextStage)=\"updateStage($event)\"></menu-button>\n\t<burger *ngIf=\"stage === 'final'\" [choices]=\"choices\"></burger>\n\t",
             providers: [stages_service_1.StagesService]
         }), 
         __metadata('design:paramtypes', [stages_service_1.StagesService])

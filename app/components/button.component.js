@@ -27,6 +27,10 @@ var ButtonComponent = (function () {
     };
     ButtonComponent.prototype.updateStage = function () {
         var CURRENT = this.stage;
+        if (this.choices[CURRENT] === '') {
+            alert('Please select a choice');
+            return;
+        }
         switch (CURRENT) {
             case 'size':
                 this.stage = 'patty';
@@ -49,6 +53,10 @@ var ButtonComponent = (function () {
         core_1.Input(), 
         __metadata('design:type', String)
     ], ButtonComponent.prototype, "stage", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], ButtonComponent.prototype, "choices", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)

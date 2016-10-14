@@ -14,6 +14,7 @@ var menu_component_1 = require('./components/menu.component');
 var subtitle_component_1 = require('./components/subtitle.component');
 var list_component_1 = require('./components/list.component');
 var button_component_1 = require('./components/button.component');
+var burger_component_1 = require('./components/burger.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ var AppModule = (function () {
                 menu_component_1.MenuComponent,
                 subtitle_component_1.SubtitleComponent,
                 list_component_1.ListComponent,
-                button_component_1.ButtonComponent
+                button_component_1.ButtonComponent,
+                burger_component_1.BurgerComponent
             ],
             bootstrap: [
                 menu_component_1.MenuComponent

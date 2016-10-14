@@ -5,6 +5,7 @@ import { MenuComponent }     from './components/menu.component';
 import { SubtitleComponent } from './components/subtitle.component';
 import { ListComponent }     from './components/list.component';
 import { ButtonComponent }   from './components/button.component';
+import { BurgerComponent }   from './components/burger.component';
 
 @NgModule({
 	imports      : [ BrowserModule ],
@@ -12,7 +13,8 @@ import { ButtonComponent }   from './components/button.component';
 		MenuComponent,
 		SubtitleComponent,
 		ListComponent,
-		ButtonComponent
+		ButtonComponent,
+		BurgerComponent
 	],
 	bootstrap    : [
 		MenuComponent

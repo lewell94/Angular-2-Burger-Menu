@@ -28,7 +28,7 @@ export class ListComponent {
 
 	selectItem(e): void {
 		this.choiceSelected.emit({
-			value: e.target.innerText;
+			value: e.target.innerText
 		})
 	}
 

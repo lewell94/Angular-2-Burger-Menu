@@ -7,6 +7,8 @@ import { ListComponent }     from './components/list.component';
 import { ButtonComponent }   from './components/button.component';
 import { BurgerComponent }   from './components/burger.component';
 
+import { ChoicePipe } from './pipes/choice.pipe';
+
 @NgModule({
 	imports      : [ BrowserModule ],
 	declarations : [
@@ -14,7 +16,8 @@ import { BurgerComponent }   from './components/burger.component';
 		SubtitleComponent,
 		ListComponent,
 		ButtonComponent,
-		BurgerComponent
+		BurgerComponent,
+		ChoicePipe
 	],
 	bootstrap    : [
 		MenuComponent

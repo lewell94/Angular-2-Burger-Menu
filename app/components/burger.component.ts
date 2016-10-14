@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
 	selector: 'burger',
 	template: `
 	<ul class="burger__list">
-		
+		<li *ngFor="let choice of choices | choice">
+			{{choice.key}}: {{choice.value}}
+		</li>
 	</ul>
 	`
 })

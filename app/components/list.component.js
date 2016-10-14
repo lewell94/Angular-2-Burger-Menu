@@ -20,6 +20,10 @@ var ListComponent = (function () {
         };
         this.items = this.lists.size;
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ListComponent.prototype, "stage", void 0);
     ListComponent = __decorate([
         core_1.Component({
             selector: 'menu-list',

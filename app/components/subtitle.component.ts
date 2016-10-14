@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'menu-subtitle',
@@ -14,4 +14,6 @@ export class SubtitleComponent {
 	};
 
 	subtitle = this.titles.size;
+
+	@Input() stage : string;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'menu-button',
@@ -12,4 +12,6 @@ export class ButtonComponent {
 	}
 	
 	text = this.textOptions.default;
+
+	@Input() stage : string;
 }

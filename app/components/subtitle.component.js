@@ -19,6 +19,10 @@ var SubtitleComponent = (function () {
         };
         this.subtitle = this.titles.size;
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], SubtitleComponent.prototype, "stage", void 0);
     SubtitleComponent = __decorate([
         core_1.Component({
             selector: 'menu-subtitle',

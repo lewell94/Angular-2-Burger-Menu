@@ -13,17 +13,15 @@ var stages_service_1 = require('../services/stages.service');
 var MenuComponent = (function () {
     function MenuComponent(StagesService) {
         this.StagesService = StagesService;
+        this.hello = this.StagesService.currentStage;
     }
     MenuComponent.prototype.nextStage = function () {
         this.StagesService.updateStage();
-        if (this.StagesService.currentStage === 'sauce') {
-            this.text = this.textOptions.final;
-        }
     };
     MenuComponent = __decorate([
         core_1.Component({
             selector: 'burger-menu',
-            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle></menu-subtitle>\n\t<menu-list></menu-list>\n\t<menu-button></menu-button>\n\t",
+            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle [stage]=\"hello\"></menu-subtitle>\n\t<menu-list [stage]=\"hello\"></menu-list>\n\t<menu-button [stage]=\"hello\"></menu-button>\n\t",
             providers: [stages_service_1.StagesService]
         }), 
         __metadata('design:paramtypes', [stages_service_1.StagesService])

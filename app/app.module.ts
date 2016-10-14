@@ -15,10 +15,7 @@ import { ButtonComponent }   from './components/button.component';
 		ButtonComponent
 	],
 	bootstrap    : [
-		MenuComponent,
-		SubtitleComponent,
-		ListComponent,
-		ButtonComponent
+		MenuComponent
 	]
 })
 export class AppModule {}

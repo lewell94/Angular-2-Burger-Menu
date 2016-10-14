@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { StagesService } from '../services/stages.service';
 
@@ -23,4 +23,6 @@ export class ListComponent {
 	}
 	
 	items = this.lists.size;
+
+	@Input() stage : string;
 }

@@ -27,10 +27,7 @@ var AppModule = (function () {
                 button_component_1.ButtonComponent
             ],
             bootstrap: [
-                menu_component_1.MenuComponent,
-                subtitle_component_1.SubtitleComponent,
-                list_component_1.ListComponent,
-                button_component_1.ButtonComponent
+                menu_component_1.MenuComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

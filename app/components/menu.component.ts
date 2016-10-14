@@ -6,9 +6,9 @@ import { StagesService } from '../services/stages.service';
 	selector: 'burger-menu',
 	template: `
 	<h1>Burger Menu</h1>
-	<menu-subtitle></menu-subtitle>
-	<menu-list></menu-list>
-	<menu-button></menu-button>
+	<menu-subtitle [stage]="hello"></menu-subtitle>
+	<menu-list [stage]="hello"></menu-list>
+	<menu-button [stage]="hello"></menu-button>
 	`,
 	providers: [ StagesService ]
 })
@@ -20,4 +20,6 @@ export class MenuComponent {
 
 		this.StagesService.updateStage();
 	}
+
+	hello : string = this.StagesService.currentStage;
 }

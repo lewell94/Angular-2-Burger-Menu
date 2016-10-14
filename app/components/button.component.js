@@ -17,6 +17,10 @@ var ButtonComponent = (function () {
         };
         this.text = this.textOptions.default;
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ButtonComponent.prototype, "stage", void 0);
     ButtonComponent = __decorate([
         core_1.Component({
             selector: 'menu-button',

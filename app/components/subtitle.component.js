@@ -26,7 +26,7 @@ var SubtitleComponent = (function () {
     SubtitleComponent = __decorate([
         core_1.Component({
             selector: 'menu-subtitle',
-            template: '<h3 (click)="stepOne()">{{subtitle}} {{stage}}</h3>'
+            template: '<h3>{{subtitle}}</h3>'
         }), 
         __metadata('design:paramtypes', [])
     ], SubtitleComponent);

@@ -19,7 +19,8 @@ export class SubtitleComponent {
 		size  : 'Select your burger size',
 		patty : 'Select your patty',
 		salad : 'Select your salad',
-		sauce : 'Select your sauce'
+		sauce : 'Select your sauce',
+		final : 'Your burger'
 	};
 
 	subtitle = this.titles.size;

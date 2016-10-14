@@ -15,7 +15,8 @@ var SubtitleComponent = (function () {
             size: 'Select your burger size',
             patty: 'Select your patty',
             salad: 'Select your salad',
-            sauce: 'Select your sauce'
+            sauce: 'Select your sauce',
+            final: 'Your burger'
         };
         this.subtitle = this.titles.size;
     }

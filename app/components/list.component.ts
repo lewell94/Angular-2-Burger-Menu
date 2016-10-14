@@ -15,6 +15,13 @@ import { StagesService } from '../services/stages.service';
 })
 export class ListComponent {
 
+	ngOnChanges(change) {
+
+		if ( change.stage ) {
+			this.items = this.lists[this.stage];
+		}
+	}
+
 	@Input() stage: string;
 
 	lists = {

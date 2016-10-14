@@ -20,6 +20,11 @@ var ListComponent = (function () {
         };
         this.items = this.lists.size;
     }
+    ListComponent.prototype.ngOnChanges = function (change) {
+        if (change.stage) {
+            this.items = this.lists[this.stage];
+        }
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)

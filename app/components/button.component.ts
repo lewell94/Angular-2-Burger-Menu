@@ -6,6 +6,15 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
 
+	ngOnChanges(change) {
+
+		if ( change.stage ) {
+			if ( change.stage.currentValue === 'sauce' ) {
+				this.text = this.textOptions.final;
+			}
+		}
+	}
+
 	@Input() stage : string;
 
 	@Output() nextStage: EventEmitter<any> = new EventEmitter();

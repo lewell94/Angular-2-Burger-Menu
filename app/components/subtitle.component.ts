@@ -6,6 +6,13 @@ import { Component, Input } from '@angular/core';
 })
 export class SubtitleComponent {
 
+	ngOnChanges(change) {
+
+		if ( change.stage ) {
+			this.subtitle = this.titles[this.stage];
+		}
+	}
+
 	@Input() stage: string;
 
 	titles = {

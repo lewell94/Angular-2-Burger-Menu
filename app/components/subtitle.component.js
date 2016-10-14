@@ -19,6 +19,11 @@ var SubtitleComponent = (function () {
         };
         this.subtitle = this.titles.size;
     }
+    SubtitleComponent.prototype.ngOnChanges = function (change) {
+        if (change.stage) {
+            this.subtitle = this.titles[this.stage];
+        }
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)

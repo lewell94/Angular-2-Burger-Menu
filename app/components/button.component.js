@@ -18,6 +18,13 @@ var ButtonComponent = (function () {
         };
         this.text = this.textOptions.default;
     }
+    ButtonComponent.prototype.ngOnChanges = function (change) {
+        if (change.stage) {
+            if (change.stage.currentValue === 'sauce') {
+                this.text = this.textOptions.final;
+            }
+        }
+    };
     ButtonComponent.prototype.updateStage = function () {
         this.stage = 'patty';
         this.nextStage.emit({

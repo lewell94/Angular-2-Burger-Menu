@@ -4,7 +4,7 @@ import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 	selector: 'burger',
 	template: `
 	<ul class="burger__list">
-		<li *ngFor="let choice of choices | choice">
+		<li *ngFor="let choice of choices | choice" class="burger__option">
 			{{choice.key}}: {{choice.value}}
 		</li>
 	</ul>

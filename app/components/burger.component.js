@@ -19,7 +19,7 @@ var BurgerComponent = (function () {
     BurgerComponent = __decorate([
         core_1.Component({
             selector: 'burger',
-            template: "\n\t<ul class=\"burger__list\">\n\t\t<li *ngFor=\"let choice of choices | choice\">\n\t\t\t{{choice.key}}: {{choice.value}}\n\t\t</li>\n\t</ul>\n\t"
+            template: "\n\t<ul class=\"burger__list\">\n\t\t<li *ngFor=\"let choice of choices | choice\" class=\"burger__option\">\n\t\t\t{{choice.key}}: {{choice.value}}\n\t\t</li>\n\t</ul>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], BurgerComponent);

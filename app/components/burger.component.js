@@ -12,10 +12,14 @@ var core_1 = require('@angular/core');
 var BurgerComponent = (function () {
     function BurgerComponent() {
     }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], BurgerComponent.prototype, "choices", void 0);
     BurgerComponent = __decorate([
         core_1.Component({
             selector: 'burger',
-            template: '<h1>Your Burger</h1>'
+            template: "\n\t<ul class=\"burger__list\">\n\t\t\n\t</ul>\n\t"
         }), 
         __metadata('design:paramtypes', [])
     ], BurgerComponent);

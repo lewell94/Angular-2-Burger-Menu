@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'burger',
-	template: '<h1>Your Burger</h1>'
+	template: `
+	<ul class="burger__list">
+		
+	</ul>
+	`
 })
 export class BurgerComponent {
 
+	@Input() choices;
 }

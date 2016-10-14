@@ -9,7 +9,7 @@ import { StagesService } from '../services/stages.service';
 	<menu-subtitle [stage]="stage"></menu-subtitle>
 	<menu-list *ngIf="stage !== 'final'" [stage]="stage" (choiceSelected)="saveChoice($event)"></menu-list>
 	<menu-button *ngIf="stage !== 'final'" [stage]="stage" (nextStage)="updateStage($event)"></menu-button>
-	<burger *ngIf="stage === 'final'"></burger>
+	<burger *ngIf="stage === 'final'" [choices]="choices"></burger>
 	`,
 	providers: [ StagesService ]
 })

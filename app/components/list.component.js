@@ -27,6 +27,13 @@ var ListComponent = (function () {
         }
     };
     ListComponent.prototype.selectItem = function (e) {
+        var CLICKED = document.querySelectorAll('li.clicked');
+        if (CLICKED.length > 0) {
+            for (var i = 0; i < CLICKED.length; i++) {
+                CLICKED[i].classList.remove('clicked');
+            }
+        }
+        e.target.classList.add('clicked');
         this.choiceSelected.emit({
             value: e.target.innerText
         });

@@ -27,6 +27,18 @@ export class ListComponent {
 	@Output() choiceSelected: EventEmitter<any> = new EventEmitter();
 
 	selectItem(e): void {
+
+		const CLICKED = document.querySelectorAll('li.clicked');
+
+		if ( CLICKED.length > 0 ) {
+
+			for ( let i = 0; i < CLICKED.length; i++ ) {
+				CLICKED[i].classList.remove('clicked');
+			}
+		}
+
+		e.target.classList.add('clicked');
+
 		this.choiceSelected.emit({
 			value: e.target.innerText
 		})

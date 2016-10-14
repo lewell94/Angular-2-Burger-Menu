@@ -11,20 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ButtonComponent = (function () {
     function ButtonComponent() {
+        this.nextStage = new core_1.EventEmitter();
         this.textOptions = {
             default: 'Next Step',
             final: 'Finish'
         };
         this.text = this.textOptions.default;
     }
+    ButtonComponent.prototype.updateStage = function () {
+        this.stage = 'patty';
+        this.nextStage.emit({
+            value: this.stage
+        });
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
     ], ButtonComponent.prototype, "stage", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ButtonComponent.prototype, "nextStage", void 0);
     ButtonComponent = __decorate([
         core_1.Component({
             selector: 'menu-button',
-            template: '<button class="menu__button">{{text}}</button>'
+            template: '<button class="menu__button" (click)="updateStage()">{{text}}</button>'
         }), 
         __metadata('design:paramtypes', [])
     ], ButtonComponent);

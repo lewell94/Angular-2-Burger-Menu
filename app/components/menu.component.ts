@@ -8,7 +8,7 @@ import { StagesService } from '../services/stages.service';
 	<h1>Burger Menu</h1>
 	<menu-subtitle [stage]="stage"></menu-subtitle>
 	<menu-list [stage]="stage"></menu-list>
-	<menu-button [stage]="stage"></menu-button>
+	<menu-button [stage]="stage" (nextStage)="updateStage($event)"></menu-button>
 	`,
 	providers: [ StagesService ]
 })
@@ -16,10 +16,9 @@ export class MenuComponent {
 
 	constructor(private StagesService: StagesService) {}
 
-	nextStage(): void {
-
-		this.StagesService.updateStage();
+	updateStage(e): void {
+		this.stage = e.value;
 	}
 
-	stage : string = this.StagesService.currentStage;
+	stage: string = this.StagesService.currentStage;
 }

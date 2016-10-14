@@ -15,6 +15,8 @@ import { StagesService } from '../services/stages.service';
 })
 export class ListComponent {
 
+	@Input() stage: string;
+
 	lists = {
 		size  : ['Quarter Pound', 'Half Pound', 'Full Pound'],
 		patty : ['Beef', 'Chicken', 'Vegetable'],
@@ -24,5 +26,5 @@ export class ListComponent {
 	
 	items = this.lists.size;
 
-	@Input() stage : string;
+	
 }

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SubtitleComponent {
 
-	ngOnChanges(change) {
+	ngOnChanges(change): void {
 
 		if ( change.stage ) {
 			this.subtitle = this.titles[this.stage];

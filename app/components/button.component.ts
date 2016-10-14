@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent {
 
-	ngOnChanges(change) {
+	ngOnChanges(change): void {
 
 		if ( change.stage ) {
 			if ( change.stage.currentValue === 'sauce' ) {
@@ -15,7 +15,7 @@ export class ButtonComponent {
 		}
 	}
 
-	@Input() stage : string;
+	@Input() stage: string;
 
 	@Output() nextStage: EventEmitter<any> = new EventEmitter();
 

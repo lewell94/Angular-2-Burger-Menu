@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var stages_service_1 = require('../services/stages.service');
 var ListComponent = (function () {
     function ListComponent() {
+        this.choiceSelected = new core_1.EventEmitter();
         this.lists = {
             size: ['Quarter Pound', 'Half Pound', 'Full Pound'],
             patty: ['Beef', 'Chicken', 'Vegetable'],
@@ -25,14 +26,23 @@ var ListComponent = (function () {
             this.items = this.lists[this.stage];
         }
     };
+    ListComponent.prototype.selectItem = function (e) {
+        this.choiceSelected.emit({
+            value: e.target.innerText
+        });
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
     ], ListComponent.prototype, "stage", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], ListComponent.prototype, "choiceSelected", void 0);
     ListComponent = __decorate([
         core_1.Component({
             selector: 'menu-list',
-            template: "\n\t<ul class=\"menu__list\">\n\t\t<li *ngFor=\"let item of items\">\n\t\t\t{{item}}\n\t\t</li>\n\t</ul>\n    ",
+            template: "\n\t<ul class=\"menu__list\">\n\t\t<li *ngFor=\"let item of items\" (click)=\"selectItem($event)\">\n\t\t\t{{item}}\n\t\t</li>\n\t</ul>\n    ",
             providers: [stages_service_1.StagesService]
         }), 
         __metadata('design:paramtypes', [])

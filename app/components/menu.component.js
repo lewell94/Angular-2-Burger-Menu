@@ -14,14 +14,23 @@ var MenuComponent = (function () {
     function MenuComponent(StagesService) {
         this.StagesService = StagesService;
         this.stage = this.StagesService.currentStage;
+        this.choices = {
+            size: '',
+            patty: '',
+            salad: '',
+            sauce: ''
+        };
     }
     MenuComponent.prototype.updateStage = function (e) {
         this.stage = e.value;
     };
+    MenuComponent.prototype.saveChoice = function (e) {
+        this.choices[this.stage] = e.value;
+    };
     MenuComponent = __decorate([
         core_1.Component({
             selector: 'burger-menu',
-            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle [stage]=\"stage\"></menu-subtitle>\n\t<menu-list [stage]=\"stage\"></menu-list>\n\t<menu-button [stage]=\"stage\" (nextStage)=\"updateStage($event)\"></menu-button>\n\t",
+            template: "\n\t<h1>Burger Menu</h1>\n\t<menu-subtitle [stage]=\"stage\"></menu-subtitle>\n\t<menu-list [stage]=\"stage\" (choiceSelected)=\"saveChoice($event)\"></menu-list>\n\t<menu-button [stage]=\"stage\" (nextStage)=\"updateStage($event)\"></menu-button>\n\t",
             providers: [stages_service_1.StagesService]
         }), 
         __metadata('design:paramtypes', [stages_service_1.StagesService])

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { StagesService } from '../services/stages.service';
 
@@ -6,7 +6,7 @@ import { StagesService } from '../services/stages.service';
 	selector: 'menu-list',
 	template: `
 	<ul class="menu__list">
-		<li *ngFor="let item of items">
+		<li *ngFor="let item of items" (click)="selectItem($event)">
 			{{item}}
 		</li>
 	</ul>
@@ -15,7 +15,7 @@ import { StagesService } from '../services/stages.service';
 })
 export class ListComponent {
 
-	ngOnChanges(change) {
+	ngOnChanges(change): void {
 
 		if ( change.stage ) {
 			this.items = this.lists[this.stage];
@@ -23,6 +23,14 @@ export class ListComponent {
 	}
 
 	@Input() stage: string;
+
+	@Output() choiceSelected: EventEmitter<any> = new EventEmitter();
+
+	selectItem(e): void {
+		this.choiceSelected.emit({
+			value: e.target.innerText;
+		})
+	}
 
 	lists = {
 		size  : ['Quarter Pound', 'Half Pound', 'Full Pound'],

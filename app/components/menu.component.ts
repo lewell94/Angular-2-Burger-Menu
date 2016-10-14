@@ -7,7 +7,7 @@ import { StagesService } from '../services/stages.service';
 	template: `
 	<h1>Burger Menu</h1>
 	<menu-subtitle [stage]="stage"></menu-subtitle>
-	<menu-list [stage]="stage"></menu-list>
+	<menu-list [stage]="stage" (choiceSelected)="saveChoice($event)"></menu-list>
 	<menu-button [stage]="stage" (nextStage)="updateStage($event)"></menu-button>
 	`,
 	providers: [ StagesService ]
@@ -20,5 +20,16 @@ export class MenuComponent {
 		this.stage = e.value;
 	}
 
+	saveChoice(e): void {
+		this.choices[this.stage] = e.value;
+	}
+
 	stage: string = this.StagesService.currentStage;
+
+	choices = {
+		size  : '',
+		patty : '',
+		salad : '',
+		sauce : ''
+	}
 }
